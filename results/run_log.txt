@@ -1,0 +1,42 @@
+Policies: 500,000 | Exposure: 1,516,715 years | Deaths: 3,840 | Expected: 4,307.3
+A/E by count: 89.2% (95% CI 86.4% - 92.0%) | A/E by amount: 85.4%
+
+age_band
+age_band  actual  expected  ae_count  ci_low  ci_high  ae_amount  credibility  assumption
+   20-29      53    58.155     0.911   0.683    1.192      0.877        0.221       0.980
+   30-39     283   356.303     0.794   0.704    0.892      0.741        0.511       0.895
+   40-49    1005  1122.711     0.895   0.841    0.952      0.859        0.964       0.899
+   50-59    1414  1588.640     0.890   0.844    0.938      0.840        1.000       0.890
+     60+    1085  1181.449     0.918   0.865    0.975      0.900        1.000       0.918
+
+sex
+sex  actual  expected  ae_count  ci_low  ci_high  ae_amount  credibility  assumption
+  F    1210  1419.033     0.853   0.805    0.902       0.82          1.0       0.853
+  M    2630  2888.224     0.911   0.876    0.946       0.87          1.0       0.911
+
+smoker
+smoker  actual  expected  ae_count  ci_low  ci_high  ae_amount  credibility  assumption
+     N    2885  3646.237     0.791   0.763    0.821      0.758        1.000       0.791
+     S     955   661.021     1.445   1.355    1.539      1.382        0.939       1.418
+
+duration_band
+duration_band  actual  expected  ae_count  ci_low  ci_high  ae_amount  credibility  assumption
+            0     239   394.892     0.605   0.531    0.687      0.570        0.470       0.814
+            1     273   406.635     0.671   0.594    0.756      0.687        0.502       0.835
+            2     366   414.635     0.883   0.795    0.978      0.858        0.582       0.932
+           3+    2962  3091.096     0.958   0.924    0.993      0.911        1.000       0.958
+
+sa_band
+sa_band  actual  expected  ae_count  ci_low  ci_high  ae_amount  credibility  assumption
+ <=300k    3305  3613.568     0.915   0.884    0.946      0.909        1.000       0.915
+  >300k     535   693.690     0.771   0.707    0.839      0.766        0.703       0.839
+
+GLM validation
+                                                         term  factor  ci_low  ci_high  p_value  true_value  within_95_ci
+Base level (age 40-49, male, non-smoker, year 3+, SA <= 300k)   0.905   0.841    0.974    0.008        0.85          True
+                                                       Sex: F   0.963   0.900    1.031    0.279        1.00          True
+                                                    Smoker: S   1.822   1.693    1.960    0.000        1.90          True
+                                               Policy year: 0   0.630   0.552    0.720    0.000        0.60          True
+                                               Policy year: 1   0.699   0.617    0.792    0.000        0.75          True
+                                               Policy year: 2   0.920   0.824    1.026    0.132        0.90          True
+                                           Sum assured: >300k   0.844   0.771    0.925    0.000        0.85          True
