@@ -1,5 +1,7 @@
 # Life Insurance Mortality Experience Study
 
+[![tests](https://github.com/yelbakali-creator/life-mortality-experience-study/actions/workflows/tests.yml/badge.svg)](https://github.com/yelbakali-creator/life-mortality-experience-study/actions/workflows/tests.yml)
+
 An end-to-end actual-to-expected (A/E) mortality study in Python, built the way a life pricing or reinsurance team runs one: policy-level data, exact exposure calculation, A/E by segment with confidence intervals, credibility weighting and a Poisson GLM to set mortality assumptions.
 
 The portfolio is simulated with known "true" mortality, so the study can be **validated**: the model must recover the hidden assumptions from the data alone. It does, for all seven parameters.
@@ -78,6 +80,7 @@ The pipeline asserts that deaths in the exposure file reconcile exactly with dea
 
 ```bash
 pip install -r requirements.txt
+python -m pytest       # 5 automated validation tests
 python run_study.py
 ```
 
